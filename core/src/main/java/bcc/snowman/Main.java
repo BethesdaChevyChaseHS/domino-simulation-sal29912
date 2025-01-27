@@ -171,7 +171,9 @@ public class Main extends ApplicationAdapter {
     }
 
     private void addAllDominos() {
-        //add your code here!!
+        for (int i = 0; i < 10; i++) {
+            addDomino(1.5f + i * 0.5f, 0.5f); 
+        }
     }
 
     // note - creates from center
@@ -184,7 +186,7 @@ public class Main extends ApplicationAdapter {
         Body domino = world.createBody(bodyDef);
 
         PolygonShape dominoShape = new PolygonShape();
-        dominoShape.setAsBox(DOMINO_WIDTH / 2f, DOMINO_HEIGHT / 2f);
+        dominoShape.setAsBox(DOMINO_WIDTH / 3f, DOMINO_HEIGHT / 2f);
 
         FixtureDef dominoFixture = new FixtureDef();
         dominoFixture.shape = dominoShape;
@@ -203,7 +205,7 @@ public class Main extends ApplicationAdapter {
     private void dominoStart() {
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(.5f, .5f);
+        bodyDef.position.set(.2f, .5f);
         bodyDef.linearVelocity.set(1.5f, 0f);
 
         Body ball = world.createBody(bodyDef);
